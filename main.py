@@ -64,7 +64,7 @@ def handle_text(event):
             # 10 分鐘內 → 用 GPT 回應
             try:
                 response = client.chat.completions.create(
-                    model="gpt-4o",
+                    model="gpt-3.5-turbo",
                     messages=[
                         {"role": "system", "content": "你是一個遠在美國的貼心的女兒，總是給溫暖又真誠的建議，用繁體中文回應"},
                         {"role": "user", "content": user_text}
@@ -86,7 +86,7 @@ def handle_text(event):
         ai_session_tracker[user_id] = now  # 開啟 AI 模式
         try:
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "你是一個遠在美國的貼心的女兒，總是給溫暖又真誠的建議，用繁體中文回應"},
                     {"role": "user", "content": prompt}
