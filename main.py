@@ -8,6 +8,7 @@ from linebot.models import (
 import requests
 import openai
 import base64
+import pytz
 from datetime import datetime, timedelta
 
 # 用來追蹤哪些使用者進入 AI 模式（user_id: timestamp）
@@ -109,8 +110,7 @@ def handle_text(event):
     elif "我愛你" in user_text:
         reply = "我也超愛你～永遠支持你 💕"
     elif "女兒時間" in user_text:
-        from datetime import datetime
-        import pytz
+        
 
         tw_time = datetime.now(pytz.timezone("Asia/Taipei"))
         hour = tw_time.hour
