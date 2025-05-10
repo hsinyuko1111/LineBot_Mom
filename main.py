@@ -64,7 +64,7 @@ def handle_text(event):
             # 10 分鐘內 → 用 GPT 回應
             try:
                 response = client.chat.completions.create(
-                    model="o4-mini",
+                    model="gpt-4o",
                     messages=[
                         {"role": "system", "content": "你是一個遠在美國的貼心的女兒，總是給溫暖又真誠的建議，用繁體中文回應"},
                         {"role": "user", "content": user_text}
@@ -86,7 +86,7 @@ def handle_text(event):
         ai_session_tracker[user_id] = now  # 開啟 AI 模式
         try:
             response = client.chat.completions.create(
-                model="o4-mini",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "你是一個遠在美國的貼心的女兒，總是給溫暖又真誠的建議，用繁體中文回應"},
                     {"role": "user", "content": prompt}
@@ -158,7 +158,7 @@ def handle_image(event):
         image_data_uri = f"data:image/jpeg;base64,{base64_image}"
 
         response = client.chat.completions.create(
-            model="o4-mini",
+            model="gpt-4o",
             messages=[
                 {
                     "role": "user",
